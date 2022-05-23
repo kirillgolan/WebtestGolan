@@ -1,11 +1,14 @@
 import Lesson6.ContactPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
+@Epic("Магазин одежды")
 public class HW6AutomationPracticeTest {
     WebDriver driver;
     ContactPage contactPage;
@@ -22,6 +25,8 @@ public class HW6AutomationPracticeTest {
     }
 
     @Test
+    @Feature("Тех поддержка")
+    @Story("Отправка сообщения в тех поддержку")
     void customerServiceMessageTest() throws InterruptedException {
         driver.get("http://automationpractice.com/index.php?controller=contact");
         new ContactPage(driver)

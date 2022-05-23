@@ -1,5 +1,6 @@
 package Lesson6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,10 +21,10 @@ public class ContactPage extends BaseView {
     @FindBy(id = "submitMessage")
     public WebElement submitMessageButton;
 
-
     @FindBy(xpath = "//select[@id='id_contact']/option[@value='2']")
     public WebElement customerServiceSubjectClick;
 
+    @Step("Вводим сообщение и отправляем его")
     public void contact(String email, String message) {
         emailField.sendKeys(email);
         messageField.sendKeys(message);
